@@ -8,12 +8,21 @@
 <meta property="og:title" content="מעון חב&quot;ד צור הדסה">
 <meta property="og:description" content="מחבקים, מטפחים, מצמיחים. מידע להורים לשנת תשפ&quot;ז.">
 <meta property="og:image" content="assets/kids-blocks.jpg">
+<script>
+(function () {
+  var r = document.documentElement;
+  r.classList.add('scrub');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('motion');
+  setTimeout(function () { if (!window.siteReady) r.classList.remove('motion', 'scrub'); }, 4000);
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<div class="scroll-progress" aria-hidden="true"><i></i></div>
 
 <header class="topbar">
   <div class="wrap">
@@ -39,10 +48,19 @@
     <h1 class="script">ברוכים הבאים למשפחת מעון חב"ד</h1>
     <span class="pill">מידע להורים | שנת הלימודים תשפ"ז</span>
     <p class="tagline">מחבקים • מטפחים • מצמיחים</p>
-    <img class="art" src="assets/kids-blocks.jpg" alt="איור: שלושה פעוטות משחקים יחד בקוביות" width="1200" height="669">
     <div class="cta">
       <a class="btn" href="tel:025677515">להתקשר למעון</a>
       <a class="btn ghost" href="mailto:mgchabad.z.h@gmail.com">לכתוב לנו</a>
+    </div>
+  </div>
+</section>
+
+<section class="open-scroll" data-open-scroll aria-label="18 שנות עשייה חינוכית">
+  <div class="open-pin">
+    <div class="open-frame"><img src="assets/kids-blocks.jpg" alt="" width="1200" height="669"></div>
+    <div class="open-text">
+      <h2>18 שנות עשייה חינוכית</h2>
+      <p>מחבקים • מטפחים • מצמיחים, עכשיו במבנה החדש והמרווח שלנו</p>
     </div>
   </div>
 </section>
@@ -318,6 +336,7 @@
   </div>
 </footer>
 
+<script src="assets/vendor/lenis.min.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>

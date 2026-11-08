@@ -5,12 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>תקנון ונהלים - מעון חב"ד צור הדסה</title>
 <meta name="description" content="נהלים שעושים סדר: תקנון ומידע חשוב להורי מעון חב&quot;ד צור הדסה לשנת הלימודים תשפ&quot;ז - רישום, שכר לימוד, ביטול, מצבי חירום, ביטוח ובריאות.">
+<script>
+(function () {
+  var r = document.documentElement;
+  r.classList.add('scrub');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('motion');
+  setTimeout(function () { if (!window.siteReady) r.classList.remove('motion', 'scrub'); }, 4000);
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
+<div class="scroll-progress" aria-hidden="true"><i></i></div>
 
 <header class="topbar">
   <div class="wrap">
@@ -214,6 +223,7 @@
   </div>
 </footer>
 
+<script src="../assets/vendor/lenis.min.js"></script>
 <script src="../assets/site.js"></script>
 </body>
 </html>

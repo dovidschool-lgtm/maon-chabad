@@ -1,0 +1,205 @@
+/* מעון חב"ד צור הדסה - עיצוב משותף */
+:root {
+  --bg: #f7f6f2;
+  --card: #ffffff;
+  --ink: #3b3550;
+  --muted: #6d6782;
+  --violet: #5a3e93;
+  --plum: #9b3f80;
+  --teal: #20a9b8;
+  --green: #74a644;
+  --pink-soft: #fbeef3;
+  --teal-soft: #e8f6f7;
+  --green-soft: #eff6e6;
+  --violet-soft: #f0edf8;
+  --line: #e7e3ee;
+  --radius: 18px;
+  --shadow: 0 6px 24px rgba(90, 62, 147, .08);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Varela Round", "Rubik", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--plum); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+/* כותרת עליונה */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(247, 246, 242, .94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 68px; }
+.brand img { height: 46px; width: auto; }
+.nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav a {
+  text-decoration: none; color: var(--ink); padding: 6px 12px; border-radius: 999px; font-size: 15px;
+}
+.nav a:hover, .nav a[aria-current="page"] { background: var(--violet-soft); color: var(--violet); }
+.nav .call { background: var(--plum); color: #fff; }
+.nav .call:hover { background: var(--violet); color: #fff; }
+.menu-btn { display: none; background: none; border: 0; font-size: 26px; color: var(--violet); cursor: pointer; }
+
+@media (max-width: 860px) {
+  .menu-btn { display: block; }
+  .nav {
+    display: none; position: absolute; top: 68px; right: 0; left: 0;
+    flex-direction: column; background: var(--bg); padding: 8px 16px 16px; border-bottom: 1px solid var(--line);
+  }
+  .nav.open { display: flex; }
+  .nav a { padding: 10px 12px; }
+}
+
+/* כותרות בכתב יד */
+.script { font-family: "Amatic SC", "Varela Round", sans-serif; font-weight: 700; color: var(--violet); line-height: 1.05; }
+h1.script { font-size: clamp(48px, 9vw, 84px); margin: 0 0 8px; }
+h2.script { font-size: clamp(42px, 7vw, 62px); margin: 0 0 6px; text-align: center; }
+.sub { text-align: center; color: var(--muted); margin: 0 auto 32px; max-width: 640px; }
+h3 { margin: 0 0 6px; font-size: 19px; color: var(--violet); }
+
+section { padding: 56px 0; }
+section.alt { background: #fff; }
+
+/* פתיח */
+.hero { padding: 36px 0 24px; text-align: center; }
+.hero .logo { width: 100%; max-width: 520px; margin: 0 auto 18px; }
+.hero .pill {
+  display: inline-block; background: var(--teal-soft); color: var(--violet); border-radius: 999px;
+  padding: 8px 22px; font-weight: 700; margin-bottom: 8px;
+}
+.hero .tagline { color: var(--plum); font-weight: 700; letter-spacing: .5px; margin: 8px 0 0; }
+.hero .art { width: 100%; max-width: 820px; margin: 18px auto 0; mix-blend-mode: multiply; border-radius: var(--radius); }
+.cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+.btn {
+  display: inline-block; text-decoration: none; padding: 11px 24px; border-radius: 999px; font-weight: 700;
+  background: var(--plum); color: #fff; border: 2px solid var(--plum);
+}
+.btn.ghost { background: transparent; color: var(--plum); }
+.btn:hover { background: var(--violet); border-color: var(--violet); color: #fff; }
+
+/* כרטיסים */
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(2, 1fr); }
+.g3 { grid-template-columns: repeat(3, 1fr); }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 860px) { .g3, .g4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .g2, .g3, .g4 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 20px 22px; box-shadow: var(--shadow);
+}
+.card p { margin: 0; }
+.card.teal { background: var(--teal-soft); border-color: #cfeef1; }
+.card.pink { background: var(--pink-soft); border-color: #f4d9e5; }
+.card.green { background: var(--green-soft); border-color: #dcebc9; }
+.card.violet { background: var(--violet-soft); border-color: #ddd6ef; }
+.icon { font-size: 30px; line-height: 1; margin-bottom: 8px; }
+
+.vision { max-width: 760px; margin: 0 auto 36px; text-align: center; font-size: 18px; }
+.lead { text-align: center; font-size: 19px; color: var(--violet); margin: 0 auto 28px; max-width: 720px; }
+
+/* סדר יום */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.timeline li {
+  display: grid; grid-template-columns: 78px 1fr; align-items: center;
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+}
+.timeline time {
+  background: var(--plum); color: #fff; text-align: center; font-weight: 700; padding: 10px 0; direction: ltr;
+}
+.timeline span { padding: 0 16px; }
+.schedule-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 760px) { .schedule-cols { grid-template-columns: 1fr; } }
+.hours { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+.hours .card { text-align: center; min-width: 220px; }
+.hours strong { display: block; font-size: 26px; color: var(--teal); direction: ltr; }
+.note { font-size: 15px; color: var(--muted); margin-top: 12px; }
+
+/* מה מביאים */
+.bring { display: grid; grid-template-columns: 300px 1fr; gap: 28px; align-items: center; }
+.bring img { mix-blend-mode: multiply; }
+@media (max-width: 760px) { .bring { grid-template-columns: 1fr; } .bring img { max-width: 260px; margin: 0 auto; } }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0 0 16px; }
+.chips li { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px; }
+.flag { background: var(--pink-soft); border-radius: 14px; padding: 12px 18px; color: var(--plum); font-weight: 700; }
+
+/* תפריט */
+.tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 18px; }
+.tabs button {
+  font: inherit; border: 2px solid var(--teal); background: #fff; color: var(--teal);
+  padding: 6px 22px; border-radius: 999px; cursor: pointer; font-weight: 700;
+}
+.tabs button[aria-selected="true"] { background: var(--teal); color: #fff; }
+.table-scroll { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+table.menu { width: 100%; min-width: 720px; border-collapse: collapse; background: #fff; font-size: 15px; }
+table.menu th, table.menu td { border: 1px solid var(--line); padding: 10px 8px; vertical-align: top; text-align: center; }
+table.menu thead th { background: var(--teal); color: #fff; }
+table.menu tbody th { background: var(--plum); color: #fff; width: 96px; }
+table.menu td ul { list-style: none; margin: 0; padding: 0; }
+table.menu tr.snack td { background: var(--teal-soft); color: var(--violet); }
+table.menu td.shabbat { background: var(--violet-soft); color: var(--violet); font-weight: 700; vertical-align: middle; }
+
+/* לוח חופשות */
+table.cal { width: 100%; border-collapse: collapse; background: #fff; }
+table.cal th, table.cal td { border: 1px solid #ead6e3; padding: 10px 12px; text-align: center; }
+table.cal thead th { background: var(--plum); color: #fff; }
+table.cal td small { display: block; color: var(--muted); }
+.cal-notes { margin-top: 18px; }
+@media (max-width: 640px) {
+  table.cal thead { display: none; }
+  table.cal, table.cal tbody, table.cal tr, table.cal td { display: block; width: 100%; }
+  table.cal tr { margin-bottom: 10px; border: 1px solid #ead6e3; border-radius: 14px; overflow: hidden; }
+  table.cal td { border: 0; border-bottom: 1px solid #f3e7ef; text-align: right; }
+  table.cal td::before { content: attr(data-label) ": "; font-weight: 700; color: var(--plum); }
+}
+
+/* שכר לימוד */
+.fees { display: grid; gap: 12px; max-width: 760px; margin: 0 auto; }
+.fee { display: grid; grid-template-columns: 110px 1fr; align-items: center; gap: 16px; }
+.fee b.tag { color: #fff; border-radius: 12px; text-align: center; padding: 10px 0; font-size: 20px; }
+.fee .price { font-size: 22px; font-weight: 700; color: var(--violet); }
+.extras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 760px; margin: 16px auto 0; text-align: center; }
+@media (max-width: 560px) { .extras { grid-template-columns: 1fr; } .fee { grid-template-columns: 90px 1fr; } }
+.bank { max-width: 760px; margin: 20px auto 0; }
+.bank dl { display: grid; grid-template-columns: 150px 1fr; gap: 6px 12px; margin: 0; }
+.bank dt { font-weight: 700; color: var(--violet); }
+.bank dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 560px) { .bank dl { grid-template-columns: 1fr; gap: 0; } .bank dd { margin-bottom: 8px; } }
+
+/* תקנון */
+.rules { display: grid; gap: 12px; max-width: 860px; margin: 0 auto; }
+details.rule { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+details.rule summary {
+  cursor: pointer; list-style: none; padding: 16px 22px; font-weight: 700; color: var(--violet); font-size: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+details.rule summary::-webkit-details-marker { display: none; }
+details.rule summary::after { content: "+"; margin-inline-start: auto; font-size: 22px; color: var(--plum); }
+details.rule[open] summary::after { content: "−"; }
+details.rule .num {
+  flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--teal); color: #fff;
+  display: grid; place-items: center; font-size: 16px;
+}
+details.rule .body { padding: 0 22px 18px; }
+details.rule h4 { margin: 14px 0 4px; color: var(--plum); }
+details.rule ul { margin: 4px 0; padding-inline-start: 20px; }
+.warn { background: var(--pink-soft); border-radius: 12px; padding: 10px 14px; color: var(--plum); font-weight: 700; margin-top: 10px; }
+
+/* יצירת קשר ותחתית */
+.contact { text-align: center; }
+.contact .grid { max-width: 720px; margin: 0 auto; }
+.contact a { font-size: 20px; font-weight: 700; text-decoration: none; }
+footer { background: var(--plum); color: #fbe9f3; padding: 26px 0; text-align: center; font-size: 15px; }
+footer a { color: #fff; }
+.closing { max-width: 720px; margin: 0 auto; text-align: center; font-size: 18px; }
+.closing .sign { font-family: "Amatic SC", sans-serif; font-size: 36px; color: var(--plum); font-weight: 700; margin-top: 10px; }
